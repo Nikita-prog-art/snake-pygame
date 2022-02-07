@@ -1,8 +1,6 @@
 import pygame, random
 from pygame import Color as palette
 
-gameRunning = True
-
 class Vector2:
     def __init__(self, x, y):
         self.x = x
@@ -16,7 +14,7 @@ class Vector2:
         else:
             global gameRunning
             print("Can't equlas these objects")
-            gameRunning = False
+            exit()
 
     def __eq__(self, other):
         if isinstance(other, Vector2):
@@ -32,7 +30,7 @@ class Vector2:
         else:
             global gameRunning
             print("Can't match these objects:", type(self), type(other))
-            gameRunning = False
+            exit()
 
 cell_size = 40
 
@@ -90,6 +88,7 @@ cell_height = 15
 screen = pygame.display.set_mode((cell_width * cell_size, cell_height * cell_size))
 clock = pygame.time.Clock()
 grassColor = (175, 215, 70)
+gameRunning = True
 
 SCREEN_UPDATE = pygame.USEREVENT
 pygame.time.set_timer(SCREEN_UPDATE, 150)
