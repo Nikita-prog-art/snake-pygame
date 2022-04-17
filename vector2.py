@@ -26,3 +26,45 @@ class Vector2:
         else:
             print("Can't match these objects:", type(self), type(other))
             exit()
+    
+    def __lt__(self, other):
+        if isinstance(other, Vector2):
+            if self.x < other.x and self.y < other.y:
+                return True
+            else:
+                return False
+        elif isinstance(other, tuple):
+            if self.x < other[0] and self.y < other[1]:
+                return True
+            else:
+                return False
+        else:
+            print("Can't match these objects:", type(self), type(other))
+            exit()
+      
+    def __le__(self, other):
+        if self < other or self == other:
+            return True
+        else:
+            return False
+
+    def __gt__(self, other):
+        if isinstance(other, Vector2):
+            if self.x > other.x and self.y > other.y:
+                return True
+            else:
+                return False
+        elif isinstance(other, tuple):
+            if self.x > other[0] and self.y > other[1]:
+                return True
+            else:
+                return False
+        else:
+            print("Can't match these objects:", type(self), type(other))
+            exit()
+    
+    def __ge__(self, other):
+        if self > other or self == other:
+            return True
+        else:
+            return False
