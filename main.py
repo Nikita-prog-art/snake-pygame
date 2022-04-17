@@ -9,6 +9,7 @@ def draw_rect(x, y, surface, color):
     rect = pygame.Rect(x * cell_size, y * cell_size, cell_size, cell_size)
     pygame.draw.rect(surface, color, rect)
 
+
 class SNAKE:
     def __init__(self):
         self.body = [Vector2(5, 10), Vector2(6, 10), Vector2(7, 10)]
@@ -25,6 +26,7 @@ class SNAKE:
     def add_block(self):
         self.body.insert(0, self.body[0] + self.direction)
 
+
 class FRUIT:
     def __init__(self):
         self.randomize()
@@ -34,6 +36,7 @@ class FRUIT:
 
     def randomize(self):
         self.pos = Vector2(random.randint(0, cell_width - 1), random.randint(0, cell_height - 1))
+
 
 class MAIN:
     def __init__(self):
@@ -63,6 +66,7 @@ class MAIN:
     def game_over(self):
         global gameRunning
         gameRunning = False
+
 
 pygame.init()
 cell_width = 20
